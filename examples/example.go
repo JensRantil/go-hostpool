@@ -1,4 +1,4 @@
-package hostpool
+package hostpool_test
 
 import (
 	"github.com/bitly/go-hostpool"

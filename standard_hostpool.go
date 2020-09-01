@@ -127,7 +127,7 @@ func NewWithOptions(hosts []string, options StandardHostPoolOptions) HostPool {
 	return p
 }
 
-// return an entry from the HostPool
+// Get returns an entry from the HostPool
 func (p *standardHostPool) Get() HostPoolResponse {
 	p.Lock()
 	defer p.Unlock()

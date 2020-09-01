@@ -3,7 +3,7 @@
 // avoided. A good overview of Epsilon Greedy is here http://stevehanov.ca/blog/index.php?id=132
 package hostpool
 
-// Returns current version
+// Version returns current version
 func Version() string {
 	return "0.1"
 }

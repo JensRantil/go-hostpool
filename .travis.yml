@@ -1,3 +1,4 @@
+sudo: false
 language: go
 
 go:
@@ -5,3 +6,5 @@ go:
   - tip
 
 script: go test -v -benchmem -run=".*" ./... -bench "Benchmark.*"
+notifications:
+  email: false
