@@ -1,7 +1,7 @@
 package hostpool_test
 
 import (
-	"github.com/bitly/go-hostpool"
+	"github.com/kpango/go-hostpool"
 )
 
 func ExampleNewEpsilonGreedy() {
