@@ -26,7 +26,7 @@ func (r *epsilonHostPoolResponse) Mark(err error) {
 }
 
 type epsilonGreedyHostPool struct {
-	standardHostPool               // TODO - would be nifty if we could embed HostPool and Locker interfaces
+	*standardHostPool              // TODO - would be nifty if we could embed HostPool and Locker interfaces
 	epsilon                float32 // this is our exploration factor
 	decayDuration          time.Duration
 	EpsilonValueCalculator // embed the epsilonValueCalculator
@@ -54,7 +54,7 @@ func NewEpsilonGreedy(hosts []string, decayDuration time.Duration, calc EpsilonV
 	}
 	stdHP := New(hosts).(*standardHostPool)
 	p := &epsilonGreedyHostPool{
-		standardHostPool:       *stdHP,
+		standardHostPool:       stdHP,
 		epsilon:                float32(initialEpsilon),
 		decayDuration:          decayDuration,
 		EpsilonValueCalculator: calc,
